@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array-Methods</title>
+</head>
+<style>
+   
+</style>
+<body>
+   
+    
+    <script>
+        console.log('array methods');
+        let items = [
+            {name:'bike',price:100},
+            {name:'TV',price:56},
+            {name:'TV',price:7},
+            {name:'TV',price:123},
+            {name:'TV',price:68},
+            {name:'Book',price:980}
+        ];
+
+        // *****Filter Method *****
+        //this is filtering the array on the basis of a condition and return a new array
+        console.log('// *****Filter Method *********************************************')
+        let filleteredItems = items.filter((item)=>{
+            return item.price <= 100;
+        });
+        console.log(filleteredItems);
+        console.log('actual aray',items);
+
+        // *****map Method *****
+        console.log('// *****map Method *********************************************');
+        let mapItems = items.map((item)=>{
+            // return item;
+            // return item.name;
+            return item.price;
+        });
+        console.log(mapItems);
+
+        // *****find Method *****
+        console.log('// *****find Method **********************************************');
+        let findItem = items.find((item)=>{
+            return item.price >100; //it only give the only first elemnent of the given array which satisfy the condition.
+                                    // 
+        });
+        console.log(findItem);
+        
+        // *****some Method *****
+        console.log('// *****some Method **********************************************');
+        let someItem = items.some((item)=>{
+            return item.price >100;// if any one item price is higher then 100 it gives true
+        });
+        console.log(someItem);
+
+        // *****every Method *****
+        console.log('// *****every Method **********************************************');
+        let everyItem = items.every((item)=>{
+            return item.price >100;// if all item's price is higher then 100 it gives true/otherwise false
+        });
+        console.log(everyItem);
+
+        // *****Rduce Method *****
+        console.log('// *****Reduce Method **********************************************');
+        let ReduceItems = items.reduce((currentTotal,item)=>{
+            return item.price + currentTotal;
+            // it will gives the sum of all item's price 
+            // currentTotal means the just previous iteration of the array
+        },0);//here we will give the starting value to the currentTotal parameter which is 0;
+        console.log(ReduceItems);
+
+        // *****includes Method *****
+        console.log('// *****Reduce Method **********************************************');
+        let incarr = [1,2,3,4,5]
+        let includes = incarr.includes(3);
+        console.log(includes);
+
+    </script>
+</body>
+</html>
